@@ -7,7 +7,7 @@ function show(id) {
   links.forEach(l => l.classList.remove('active'));
   document.getElementById(id).classList.add('visible');
   document.querySelectorAll(`[data-section="${id}"]`).forEach(l => l.classList.add('active'));
-  history.replaceState(null, '', '#' + id);
+  history.replaceState(null, '', id === 'home' ? location.pathname : '#' + id);
 }
 
 links.forEach(link => {
@@ -20,6 +20,19 @@ links.forEach(link => {
 // restore section from hash on load
 const initial = window.location.hash.replace('#', '') || 'home';
 show(initial);
+
+// work filters
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-item').forEach(item => {
+      const cats = item.dataset.category || '';
+      item.classList.toggle('hidden', filter !== 'all' && !cats.split(' ').includes(filter));
+    });
+  });
+});
 
 // cat popup
 const catPopup = document.getElementById('catPopup');

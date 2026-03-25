@@ -21,13 +21,13 @@ body {
 .page {
   max-width: 640px;
   margin: 0 auto;
-  padding: 4rem 2rem 6rem;
+  padding: 2rem 2rem 6rem;
 }
 
 nav {
   display: flex;
   gap: 1.6rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-family: 'DM Mono', monospace;
   font-size: 0.75rem;
   font-weight: 300;
@@ -114,35 +114,85 @@ section.visible { display: block; }
   margin-bottom: 2rem;
 }
 
-/* ── About ── */
-
-.about-text { font-size: 1.08rem; }
-.about-text p + p { margin-top: 1rem; }
-.about-text p:first-child { margin-top: 0.2rem; }
-
 .portrait {
   float: right;
   width: 300px;
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 0 0.8rem 1.2rem;
+  margin: 1.5rem 0.8rem 1.2rem;
   border: 2px solid var(--rule);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  shape-outside: circle(50%);
 }
 
-.about-tags {
-  margin-top: 2rem;
+/* ── Skills ── */
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.skills-group {}
+
+.skills-category {
   font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 300;
   color: var(--muted);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.skills-list {
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.6;
 }
 
 /* ── Work ── */
+
+.work-filters {
+  display: flex;
+  gap: 0.1rem;
+  margin-bottom: 1.8rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+  position: relative;
+}
+
+.filter-btn:not(:last-child)::after {
+  content: '·';
+  position: absolute;
+  right: -0.15rem;
+  color: var(--rule);
+}
+
+.filter-btn:hover { color: var(--ink); }
+
+.filter-btn.active {
+  color: var(--ink);
+}
+
+.project-item.hidden {
+  display: none;
+}
 
 .project-list { list-style: none; }
 

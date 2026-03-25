@@ -14,7 +14,7 @@
 
   <nav id="nav">
     <a href="#" data-section="home" class="active">home</a>
-    <a href="#" data-section="about">about</a>
+    <a href="#" data-section="skills">skills</a>
     <a href="#" data-section="work">work</a>
     <a href="#" data-section="contact">contact</a>
   </nav>
@@ -22,11 +22,18 @@
   <section id="home" class="visible">
     <h1 class="home-name">Ananya</h1>
     <p class="home-tagline">software engineer · cs grad student · northeastern</p>
+    <img src="img.jpeg" alt="Ananya Hegde" class="portrait"/>
     <div class="home-intro">
-      <p>Computer Science grad student at Northeastern University, curious about how things work behind the scenes. <br>
-         Interested in building scalable backend systems and automation tools that solve real-world problems with clean, efficient code.
+      <p> Hi.</p>
+      <p> I'm a Computer Science grad student at Northeastern University, curious about how things work behind the scenes. <br>
+         Interested in building scalable backend systemsand and experimenting with automation tools to reduce manual work.
       </p>
+      <p>I love solving real-world problems and am always looking for opportunities to contribute to solving them.
+      <br>Right now I'm exploring the AI side of things; some applied ML, GPU inference optimization in LLMs, playing around with prompt design, figuring out how to plug these models into applications in useful ways.</p>
+      <p>Outside of tech, I enjoy reading, films, and exploring cafes. I'm always open to chatting about tech, projects, or just connecting.</p>
     </div>
+    <div style="clear: both;"></div>
+
     <div class="home-links">
       <a href="#" data-section="work">selected projects →</a>
       <a href="#" data-section="contact">get in touch →</a>
@@ -34,35 +41,49 @@
     </div>
   </section>
 
-  <section id="about">
-    <p class="section-label">about</p>
+  <section id="skills">
+    <p class="section-label">skills</p>
 
-    <img src="img.jpeg" alt="Ananya Hegde" class="portrait"/>
-
-    <div class="about-text">
-      <p>Hi! I'm a Computer Science grad student at Northeastern University with a strong interest in backend development and automation using AI.</p>
-
-      <p>I've enjoyed building scalable backend systems and experimenting with automation tools to reduce manual work. I love solving real-world problems and am looking for opportunities to contribute to solving them.
-      <br>Currently, I'm exploring the AI side of things; some applied ML, GPU inference optimization in LLMs, playing around with prompt design, figuring out how to plug these models into applications in useful ways.</p>
-      <p>Outside of tech, I enjoy reading, films, and exploring cafes. I'm always open to chatting about tech, projects, or just connecting.</p>
-    </div>
-
-    <div style="clear: both;"></div>
-
-    <div class="about-tags">
-      <span>backend development</span>
-      <span>automation</span>
-      <span>distributed systems</span>
-      <span>artificial intelligence</span>
-      <span>machine learning</span>
+    <div class="skills-grid">
+      <div class="skills-group">
+        <p class="skills-category">languages</p>
+        <p class="skills-list">python · javascript · typescript · java · sql</p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">backend</p>
+        <p class="skills-list">fastapi · node.js · express.js · rest apis · rabbitmq · kafka</p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">frontend</p>
+        <p class="skills-list">react · next.js · redux · html · css</p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">databases</p>
+        <p class="skills-list">postgresql · mongodb · pinecone · faiss · chroma</p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">ai / ml</p>
+        <p class="skills-list">langgraph · mlflow · dvc · airflow · prompt engineering · rag · llm inference</p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">infrastructure</p>
+        <p class="skills-list">docker · gcp · aws ecs · github actions · mcp</p>
+      </div>
     </div>
   </section>
 
   <section id="work">
     <p class="section-label">selected work</p>
+
+    <div class="work-filters">
+      <button class="filter-btn active" data-filter="all">all</button>
+      <button class="filter-btn" data-filter="ai">ai</button>
+      <button class="filter-btn" data-filter="full-stack">full-stack</button>
+    </div>
+
     <ul class="project-list">
 
-      <li class="project-item">
+      <li class="project-item" data-category="ai full-stack">
         <div class="project-header">
           <span class="project-name">RegAI</span>
           <span class="project-year">2026</span>
@@ -71,7 +92,7 @@
         <p class="project-stack">fastapi · next.js · langgraph · faiss · chroma · postgresql · docker · gcp cloud run · github actions</p>
       </li>
 
-      <li class="project-item">
+      <li class="project-item" data-category="ai full-stack">
         <div class="project-header">
           <span class="project-name">AI Support Agent</span>
           <span class="project-year">2026</span>
@@ -80,7 +101,7 @@
         <p class="project-stack">node.js · react · mongodb · gemini api · pinecone · mcp · docker · gcp</p>
       </li>
 
-      <li class="project-item">
+      <li class="project-item" data-category="full-stack">
         <div class="project-header">
           <span class="project-name">FlowRide</span>
           <span class="project-year">2025</span>
@@ -89,7 +110,7 @@
         <p class="project-stack">next.js · react · redux · express.js · rabbitmq · mongodb · docker · aws ecs</p>
       </li>
 
-      <li class="project-item">
+      <li class="project-item" data-category="ai">
         <div class="project-header">
           <span class="project-name">Rebalance AI</span>
           <span class="project-year">2025</span>
@@ -98,7 +119,7 @@
         <p class="project-stack">python · airflow · mlflow · dvc · docker · gcp · github actions</p>
       </li>
 
-      <li class="project-item">
+      <li class="project-item" data-category="full-stack">
         <div class="project-header">
           <span class="project-name">EHR Sync Platform</span>
           <span class="project-year">2025</span>
