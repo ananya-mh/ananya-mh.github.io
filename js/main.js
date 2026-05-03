@@ -6,8 +6,11 @@ function show(id) {
   sections.forEach(s => s.classList.remove('visible'));
   links.forEach(l => l.classList.remove('active'));
   document.getElementById(id).classList.add('visible');
-  document.querySelectorAll(`[data-section="${id}"]`).forEach(l => l.classList.add('active'));
+  // highlight nav for main sections, highlight "work" for project detail pages
+  const navId = id.startsWith('project-') ? 'work' : id;
+  document.querySelectorAll(`[data-section="${navId}"]`).forEach(l => l.classList.add('active'));
   history.replaceState(null, '', id === 'home' ? location.pathname : '#' + id);
+  window.scrollTo(0, 0);
 }
 
 links.forEach(link => {
@@ -31,6 +34,21 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       const cats = item.dataset.category || '';
       item.classList.toggle('hidden', filter !== 'all' && !cats.split(' ').includes(filter));
     });
+  });
+});
+
+// project detail navigation
+document.querySelectorAll('.project-item[data-project]').forEach(item => {
+  item.style.cursor = 'pointer';
+  item.addEventListener('click', () => {
+    show(item.dataset.project);
+  });
+});
+
+document.querySelectorAll('.back-to-work').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    show('work');
   });
 });
 

@@ -15,18 +15,19 @@
   <nav id="nav">
     <a href="#" data-section="home" class="active">home</a>
     <a href="#" data-section="skills">skills</a>
-    <a href="#" data-section="work">work</a>
+    <a href="#" data-section="work">projects</a>
+    <a href="#" data-section="research">research</a>
     <a href="#" data-section="contact">contact</a>
   </nav>
 
   <section id="home" class="visible">
     <h1 class="home-name">Ananya</h1>
-    <p class="home-tagline">software engineer · cs grad student · northeastern</p>
+    <p class="home-tagline">software engineer · northeastern university</p>
     <img src="img.jpeg" alt="Ananya Hegde" class="portrait"/>
     <div class="home-intro">
       <p> Hi.</p>
-      <p> I'm a Computer Science grad student at Northeastern University, curious about how things work behind the scenes. <br>
-         Interested in building scalable backend systemsand and experimenting with automation tools to reduce manual work.
+      <p> I'm a Computer Science graduate from Northeastern University, curious about how things work behind the scenes. <br>
+         Interested in building scalable backend systems and experimenting with automation tools to reduce manual work.
       </p>
       <p>I love solving real-world problems and am always looking for opportunities to contribute to solving them.
       <br>Right now I'm exploring the AI side of things; some applied ML, GPU inference optimization in LLMs, playing around with prompt design, figuring out how to plug these models into applications in useful ways.</p>
@@ -47,27 +48,27 @@
     <div class="skills-grid">
       <div class="skills-group">
         <p class="skills-category">languages</p>
-        <p class="skills-list">python · javascript · typescript · java · sql</p>
+        <p class="skills-list">python · javascript · typescript · java · sql · go </p>
       </div>
       <div class="skills-group">
         <p class="skills-category">backend</p>
-        <p class="skills-list">fastapi · node.js · express.js · rest apis · rabbitmq · kafka</p>
+        <p class="skills-list"> node.js · express.js · Django · fastapi · flask · rest apis · rabbitmq · kafka</p>
       </div>
       <div class="skills-group">
         <p class="skills-category">frontend</p>
-        <p class="skills-list">react · next.js · redux · html · css</p>
+        <p class="skills-list">react · next.js · redux · html · css · tailwindcss · bootstrap</p>
       </div>
       <div class="skills-group">
         <p class="skills-category">databases</p>
-        <p class="skills-list">postgresql · mongodb · pinecone · faiss · chroma</p>
+        <p class="skills-list">postgresql · mongodb · pinecone · faiss · chroma · redis · dynamodb</p>
       </div>
       <div class="skills-group">
         <p class="skills-category">ai / ml</p>
-        <p class="skills-list">langgraph · mlflow · dvc · airflow · prompt engineering · rag · llm inference</p>
+        <p class="skills-list"> pytorch · tensorflow · huggingface · langchain · langgraph · mlflow · dvc · airflow · prompt engineering · rag · llm inference</p>
       </div>
       <div class="skills-group">
         <p class="skills-category">infrastructure</p>
-        <p class="skills-list">docker · gcp · aws ecs · github actions · mcp</p>
+        <p class="skills-list">docker · gcp · aws · linux · github actions · mcp · kubernetes · terraform · airflow </p>
       </div>
     </div>
   </section>
@@ -83,53 +84,352 @@
 
     <ul class="project-list">
 
-      <li class="project-item" data-category="ai full-stack">
+      <li class="project-item" data-category="ai full-stack" data-project="project-regai">
         <div class="project-header">
           <span class="project-name">RegAI</span>
           <span class="project-year">2026</span>
         </div>
+        <div class="project-stack"><span>fastapi</span><span>next.js</span><span>langgraph</span><span>faiss</span><span>chroma</span><span>postgresql</span><span>docker</span><span>gcp cloud run</span><span>github actions</span></div>
         <p class="project-desc">An AI compliance platform where you upload your company's policy documents, pick a regulatory framework — GDPR, SOC 2, HIPAA — and get back a detailed gap analysis report with citations showing exactly where your policies fall short</p>
-        <p class="project-stack">fastapi · next.js · langgraph · faiss · chroma · postgresql · docker · gcp cloud run · github actions</p>
       </li>
 
-      <li class="project-item" data-category="ai full-stack">
+      <li class="project-item" data-category="ai full-stack" data-project="project-support-agent">
         <div class="project-header">
           <span class="project-name">AI Support Agent</span>
           <span class="project-year">2026</span>
         </div>
-        <p class="project-desc"> A developer support tool that answers technical questions by searching through 1,070+ chunks of Firebase documentation — so instead of manually digging through docs, you get a cited answer instantly</p>
-        <p class="project-stack">node.js · react · mongodb · gemini api · pinecone · mcp · docker · gcp</p>
+        <div class="project-stack"><span>node.js</span><span>react</span><span>mongodb</span><span>gemini api</span><span>pinecone</span><span>mcp</span><span>docker</span><span>gcp</span></div>
+        <p class="project-desc">A developer support tool that answers technical questions by searching through 1,070+ chunks of Firebase documentation — so instead of manually digging through docs, you get a cited answer instantly</p>
       </li>
 
-      <li class="project-item" data-category="full-stack">
+      <li class="project-item" data-category="full-stack" data-project="project-flowride">
         <div class="project-header">
           <span class="project-name">FlowRide</span>
           <span class="project-year">2025</span>
         </div>
+        <div class="project-stack"><span>next.js</span><span>react</span><span>redux</span><span>express.js</span><span>rabbitmq</span><span>mongodb</span><span>docker</span><span>aws ecs</span></div>
         <p class="project-desc">A ride-sharing app where users can post, find, and book rides with real-time map visualization and in-app payments. Think Craigslist rideshare, but with live routing and instant booking confirmation.</p>
-        <p class="project-stack">next.js · react · redux · express.js · rabbitmq · mongodb · docker · aws ecs</p>
       </li>
 
-      <li class="project-item" data-category="ai">
+      <li class="project-item" data-category="ai" data-project="project-rebalance">
         <div class="project-header">
           <span class="project-name">Rebalance AI</span>
           <span class="project-year">2025</span>
         </div>
+        <div class="project-stack"><span>python</span><span>airflow</span><span>mlflow</span><span>dvc</span><span>docker</span><span>gcp</span><span>github actions</span></div>
         <p class="project-desc">Predicts where Bluebikes demand will spike across Boston so stations can be restocked before they run out. Runs automatically every month on fresh data without manual intervention.</p>
-        <p class="project-stack">python · airflow · mlflow · dvc · docker · gcp · github actions</p>
       </li>
 
-      <li class="project-item" data-category="full-stack">
+      <li class="project-item" data-category="full-stack" data-project="project-ehr">
         <div class="project-header">
           <span class="project-name">EHR Sync Platform</span>
           <span class="project-year">2025</span>
         </div>
+        <div class="project-stack"><span>kafka</span><span>postgresql</span><span>airflow</span><span>docker</span></div>
         <p class="project-desc">Keeps patient health records consistent across multiple hospital systems in real time — so a doctor pulling up a chart always sees the latest information, regardless of which system updated it.</p>
-        <p class="project-stack">kafka · postgresql · airflow · docker</p>
+      </li>
+
+      <li class="project-item" data-category="ai" data-project="project-nyt">
+        <div class="project-header">
+          <span class="project-name">NYT Strands Solver</span>
+          <span class="project-year">2025</span>
+        </div>
+        <div class="project-stack"><span>python</span><span>sbert</span><span>trie</span><span>dfs</span><span>csp</span><span>pygame</span></div>
+        <p class="project-desc">An AI solver for the NYT Strands puzzle — given a letter grid and a theme, it finds the exact set of words that covers every cell with no overlaps, using a combination of search, semantic ranking, and constraint solving.</p>
+      </li>
+
+      <li class="project-item" data-category="full-stack" data-project="project-image-processor">
+        <div class="project-header">
+          <span class="project-name">ImagePro</span>
+          <span class="project-year">2024</span>
+        </div>
+        <div class="project-stack"><span>java</span><span>swing</span><span>mvc</span><span>junit</span></div>
+        <p class="project-desc">A user-friendly image processing toolkit that simplified complex workflows into an accessible desktop tool — supports 10+ operations including compression, RGB/HSV/grayscale conversions, and matrix-based filtering across GUI, CLI, and batch script modes.</p>
       </li>
 
     </ul>
   </section>
+
+  <section id="project-regai">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">RegAI</h2>
+    <p class="detail-year">2026</p>
+    <p class="case-study-summary">An AI compliance platform that turns policy documents into actionable gap analysis reports.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Compliance audits take weeks of manual cross-referencing against regulatory frameworks</li>
+        <li>Every new regulation or policy update means starting from scratch</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Upload policy docs, pick a framework (GDPR, SOC 2, HIPAA), get a gap analysis in minutes</li>
+        <li>LangGraph multi-agent pipeline — one agent retrieves clauses, one maps gaps, one generates the report</li>
+        <li>Dual vector stores: FAISS for fast keyword retrieval, Chroma for semantic search</li>
+        <li>Every finding cites the exact clause and policy section it references</li>
+        <li>Next.js frontend, FastAPI backend, deployed to GCP Cloud Run with CI/CD via GitHub Actions</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Supports three regulatory frameworks out of the box</li>
+        <li>Dual vector store approach improved retrieval relevance over single-store setups</li>
+        <li>Fully cited reports — no black-box findings</li>
+      </ul>
+    </div>                                             
+
+    <p class="detail-stack">fastapi · next.js · langgraph · faiss · chroma · postgresql · docker · gcp cloud run · github actions</p>
+  </section>
+
+  <section id="project-support-agent">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">AI Support Agent</h2>
+    <p class="detail-year">2026</p>
+    <p class="case-study-summary">A developer tool that answers technical questions using 1,070+ chunks of Firebase documentation.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Firebase docs are massive and fragmented across guides, references, and tutorials</li>
+        <li>Built-in search struggles with questions that span multiple products</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>1,070+ doc chunks embedded into Pinecone for semantic search</li>
+        <li>Gemini API generates grounded answers with citations from retrieved chunks</li>
+        <li>Exposed via MCP — plugs into any MCP-compatible AI coding assistant</li>
+        <li>Node.js backend, React frontend, MongoDB for conversation history</li>
+        <li>Containerized and deployed on GCP</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Answers grounded in actual docs, not hallucinated content</li>
+        <li>Chunking strategy and embedding quality were the biggest levers for answer quality</li>
+        <li>MCP integration makes the tool usable beyond its own UI</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">node.js · react · mongodb · gemini api · pinecone · mcp · docker · gcp</p>
+  </section>
+
+  <section id="project-flowride">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">FlowRide</h2>
+    <p class="detail-year">2025</p>
+    <p class="case-study-summary">A ride-sharing platform with real-time map routing and async booking.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Informal ride-sharing relies on manual coordination — forums, DMs, no guarantees</li>
+        <li>No way to see routes on a map, book instantly, or handle payments in one place</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Post rides, search by route, book seats with live map visualization</li>
+        <li>RabbitMQ queue handles concurrent bookings — last seat goes to one person, rest get notified</li>
+        <li>Next.js + Redux frontend, Express.js API backend</li>
+        <li>Dockerized and deployed to AWS ECS with MongoDB</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Async booking queue eliminated race conditions on seat availability</li>
+        <li>Map visualization made route evaluation instant vs. reading text descriptions</li>
+        <li>API stays responsive under concurrent booking pressure</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">next.js · react · redux · express.js · rabbitmq · mongodb · docker · aws ecs</p>
+  </section>
+
+  <section id="project-rebalance">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">Rebalance AI</h2>
+    <p class="detail-year">2025</p>
+    <p class="case-study-summary">An ML pipeline that predicts Bluebikes demand across Boston so stations get restocked proactively.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Stations run empty in high-traffic areas while others overflow with unused bikes</li>
+        <li>Restocking is reactive — crews respond after stations are already empty</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Airflow-orchestrated pipeline runs monthly: ingest data, engineer features, train, evaluate</li>
+        <li>Features include time-of-day patterns, weather correlations, seasonal trends</li>
+        <li>MLflow tracks every experiment — hyperparameters, metrics, artifacts</li>
+        <li>DVC versions training data alongside code</li>
+        <li>Dockerized on GCP with GitHub Actions CI/CD</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Runs autonomously with monthly retrains, no manual triggers</li>
+        <li>Easy to compare model iterations and roll back underperformers via MLflow</li>
+        <li>DVC solved the "which data did this model train on" problem</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">python · airflow · mlflow · dvc · docker · gcp · github actions</p>
+  </section>
+
+  <section id="project-ehr">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">EHR Sync Platform</h2>
+    <p class="detail-year">2025</p>
+    <p class="case-study-summary">A real-time sync layer that keeps patient records consistent across multiple hospital systems.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Hospitals run multiple EHR systems that don't sync with each other</li>
+        <li>Stale or conflicting patient data across systems is a safety risk</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Kafka event backbone — each source system publishes record updates to topics</li>
+        <li>Stream processor applies conflict resolution (timestamp-based, field-level merging)</li>
+        <li>PostgreSQL serves as the single source of truth</li>
+        <li>Airflow batch job runs periodic reconciliation as a safety net</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Handles high-throughput updates without bottlenecking</li>
+        <li>Field-level conflict resolution preserves concurrent updates instead of dropping one</li>
+        <li>Batch reconciliation catches edge cases where event ordering gets tricky</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">kafka · postgresql · airflow · docker</p>
+  </section>
+
+  <section id="project-nyt">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">NYT Strands Solver</h2>
+    <p class="detail-year">2025</p>
+    <p class="case-study-summary">An AI solver for the NYT Strands puzzle that finds the exact set of themed words covering every cell in the grid with no overlaps.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>NYT Strands isn't just find-the-word — every cell must be used exactly once with no overlaps</li>
+        <li>Words must also fit a hidden theme, adding a semantic constraint on top of the spatial one</li>
+        <li>The search space grows exponentially with grid size, making brute force infeasible</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Trie + DFS pass extracts every valid word traceable through adjacent cells in the grid</li>
+        <li>SBERT ranks candidates by semantic similarity to the puzzle theme — so thematically relevant words score higher</li>
+        <li>CSP solver picks the final subset of words that tiles the grid perfectly with no gaps or overlaps</li>
+        <li>Dancing Links (DLX) and Genetic Algorithm implemented as alternative solvers to benchmark tradeoffs</li>
+        <li>Pygame visualization shows the solver working through the grid step by step in real time</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Successfully solves Strands grids end-to-end given a letter grid and theme</li>
+        <li>SBERT ranking significantly narrows the candidate pool before the CSP stage, reducing solve time</li>
+        <li>Three solver approaches benchmarked — CSP with semantic pre-ranking performed best overall</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">python · sbert · trie · dfs · csp · dancing links · pygame</p>
+  </section>  
+
+  <section id="project-image-processor">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">ImagePro</h2>
+    <p class="detail-year">2024</p>
+    <p class="case-study-summary">A user-friendly Java image processing toolkit that simplified complex workflows into an accessible desktop tool for non-technical users.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Complex image processing workflows require professional editing software with steep learning curves</li>
+        <li>Non-technical users need accessible tools without sacrificing capability</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Built in Java using OOP and MVC architecture — modular, extensible codebase with clean separation of concerns</li>
+        <li>Command pattern dispatch system supports 10+ image operations: compression, RGB/HSV/grayscale conversions, intensity adjustments, and matrix-based filtering</li>
+        <li>Three execution modes from a single codebase — Swing GUI, interactive CLI, and batch script processing</li>
+        <li>Split-view preview lets users compare original and processed images side by side before committing</li>
+        <li>Histogram alignment tools for color correction and levels adjustment</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>~90% JUnit test coverage ensuring reliable transformations across all operations</li>
+        <li>Reduced reliance on professional editing software for common image processing tasks</li>
+        <li>Extensible architecture — adding new operations requires no changes to existing code</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">java · swing · mvc · command pattern · junit</p>
+  </section>
+
+  <section id="research">
+      <p class="section-label">research</p>
+
+      <ul class="paper-list">
+
+        <li class="paper-item">
+          <div class="paper-header">
+            <span class="paper-title">Parallelism Strategies and Concurrency Effects for Mixture-of-Experts Inference on GPU Systems</span>
+            <span class="paper-year">2026</span>
+          </div>
+          <p class="paper-venue">SIEDS 2026</p>
+          <p class="paper-authors"><strong>Ananya Hegde</strong>, Akshata Kumble, Ravi Gupta</p>
+          <p class="paper-abstract">A controlled comparison of tensor parallelism, expert parallelism, and hybrid placement strategies for MoE inference on NVIDIA A100 GPUs — finding that request concurrency explains more throughput variance than strategy choice, and that EP matches or exceeds TP for models with 60+ experts.</p>
+          <div class="paper-links">
+            <a href="#" target="_blank">pdf</a>
+            <a href="#" target="_blank">arxiv</a>
+            <a href="#" target="_blank">code</a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
 
   <section id="contact">
     <p class="section-label">contact</p>

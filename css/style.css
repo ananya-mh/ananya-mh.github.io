@@ -229,12 +229,27 @@ section.visible { display: block; }
 }
 
 .project-stack {
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.67rem;
+  font-size: 0.64rem;
   font-weight: 300;
-  color: var(--muted);
   letter-spacing: 0.03em;
+}
+
+.project-stack span {
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.project-item:hover .project-stack span {
+  border-color: #3d444d;
 }
 
 .project-link {
@@ -247,6 +262,188 @@ section.visible { display: block; }
 }
 
 .project-link:hover { text-decoration: underline; }
+
+/* ── Project detail ── */
+
+.back-to-work {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.back-to-work:hover { color: var(--ink); }
+
+.detail-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.detail-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+/* ── Case study ── */
+
+.case-study-summary {
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-study-section {
+  margin-bottom: 2.2rem;
+}
+
+.case-study-heading {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+
+.case-study-body {
+  font-size: 1.02rem;
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+.case-study-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.case-study-bullets li {
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.55;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.case-study-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.detail-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  padding-top: 1.4rem;
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--rule);
+}
+
+.detail-stack span {
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+}
+
+.project-item[data-project] { cursor: pointer; }
+.project-item[data-project]:hover .project-name { color: var(--accent); }
+
+/* ── Research ── */
+
+.paper-list { list-style: none; }
+
+.paper-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.paper-item:first-child { border-top: 1px solid var(--rule); }
+
+.paper-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.paper-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.paper-venue {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.paper-authors {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.paper-authors strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.paper-abstract {
+  font-size: 0.95rem;
+  color: #9aa0aa;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.paper-links {
+  display: flex;
+  gap: 0.8rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 300;
+}
+
+.paper-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.paper-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 
 /* ── Contact ── */
 
