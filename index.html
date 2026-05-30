@@ -84,6 +84,15 @@
 
     <ul class="project-list">
 
+      <li class="project-item" data-category="ai full-stack" data-project="project-inference-reliability">
+        <div class="project-header">
+          <span class="project-name">AI Inference Reliability Platform</span>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-stack"><span>python</span><span>java</span><span>typescript</span><span>kubernetes</span><span>kafka</span><span>redis</span><span>postgresql</span><span>docker</span></div>
+        <p class="project-desc">A distributed observability platform that monitors inference service health, streams metrics through Kafka, and detects cascading failures across containerized microservices — with LLM-powered root-cause analysis across a service dependency graph</p>
+      </li>
+
       <li class="project-item" data-category="ai full-stack" data-project="project-regai">
         <div class="project-header">
           <span class="project-name">RegAI</span>
@@ -148,6 +157,43 @@
       </li>
 
     </ul>
+  </section>
+
+  <section id="project-inference-reliability">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">AI Inference Reliability Platform</h2>
+    <p class="detail-year">2026</p>
+    <p class="case-study-summary">A distributed observability platform for monitoring inference service health and detecting cascading failures in real time.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Inference services fail silently or cascade across dependent microservices, and traditional monitoring tools don't capture the dependency chain</li>
+        <li>Incident triage is slow because metrics are scattered across services with no unified view of what went wrong and why</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Kubernetes-deployed services with per-service autoscaling, separated liveness/readiness probes, and chaos-injectable endpoints for reliability testing under variable traffic</li>
+        <li>Kafka streams service metrics in real time from every containerized microservice</li>
+        <li>Redis caches live service status for instant health checks; PostgreSQL stores historical incidents for trend analysis</li>
+        <li>Service dependency graph correlates failures across upstream and downstream services</li>
+        <li>LLM-powered root-cause analysis ingests correlated failure data and generates actionable incident summaries</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>Reduced incident triage time by surfacing correlated failures and root causes automatically</li>
+        <li>Chaos-injectable endpoints enabled proactive reliability testing before failures hit production traffic</li>
+        <li>Dependency graph correlation caught cascading failures that per-service monitoring missed entirely</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">python · java · typescript · kubernetes · kafka · redis · postgresql · docker</p>
   </section>
 
   <section id="project-regai">
@@ -422,7 +468,7 @@
           <p class="paper-authors"><strong>Ananya Hegde</strong>, Akshata Kumble, Ravi Gupta</p>
           <p class="paper-abstract">A controlled comparison of tensor parallelism, expert parallelism, and hybrid placement strategies for MoE inference on NVIDIA A100 GPUs — finding that request concurrency explains more throughput variance than strategy choice, and that EP matches or exceeds TP for models with 60+ experts.</p>
           <div class="paper-links">
-            <a href="#" target="_blank">pdf</a>
+            <a href="https://drive.google.com/file/d/1XpFSX8_OFuhgncVd9iJZpYI8DJCIiSdc/view?usp=sharing" target="_blank">pdf</a>
             <a href="#" target="_blank">arxiv</a>
             <a href="#" target="_blank">code</a>
           </div>
