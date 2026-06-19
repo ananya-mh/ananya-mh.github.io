@@ -152,10 +152,21 @@ section.visible { display: block; }
   line-height: 1.6;
 }
 
+.skills-list a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.skills-list a:hover {
+  color: var(--accent);
+}
+
 /* ── Work ── */
 
 .work-filters {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.1rem;
   margin-bottom: 1.8rem;
   font-family: 'DM Mono', monospace;
@@ -263,15 +274,40 @@ section.visible { display: block; }
 
 .project-link:hover { text-decoration: underline; }
 
+.detail-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 300;
+}
+
+.detail-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.detail-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ── Project detail ── */
 
-.back-to-work {
+.back-to-work,
+.back-to-skills {
   color: var(--muted);
   text-decoration: none;
   transition: color 0.15s;
 }
 
-.back-to-work:hover { color: var(--ink); }
+.back-to-work:hover,
+.back-to-skills:hover { color: var(--ink); }
 
 .detail-title {
   font-size: 1.8rem;

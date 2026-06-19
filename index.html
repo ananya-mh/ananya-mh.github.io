@@ -27,10 +27,10 @@
     <div class="home-intro">
       <p> Hi.</p>
       <p> I'm a Computer Science graduate from Northeastern University, curious about how things work behind the scenes. <br>
-         Interested in building scalable backend systems and experimenting with automation tools to reduce manual work.
+        I'm interested in building scalable backend systems, infrastructure that makes AI systems run reliably at scale, and the tooling that bridges models to production.
       </p>
       <p>I love solving real-world problems and am always looking for opportunities to contribute to solving them.
-      <br>Right now I'm exploring the AI side of things; some applied ML, GPU inference optimization in LLMs, playing around with prompt design, figuring out how to plug these models into applications in useful ways.</p>
+      <br>Right now I'm exploring LLM inference optimization on the software-level, playing around with autonomous AI agents, figuring out how to these agents into applications in useful ways.</p>
       <p>Outside of tech, I enjoy reading, films, and exploring cafes. I'm always open to chatting about tech, projects, or just connecting.</p>
     </div>
     <div style="clear: both;"></div>
@@ -46,9 +46,18 @@
     <p class="section-label">skills</p>
 
     <div class="skills-grid">
+      
       <div class="skills-group">
         <p class="skills-category">languages</p>
         <p class="skills-list">python · javascript · typescript · java · sql · go </p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">ai / ml</p>
+        <p class="skills-list"> pytorch · tensorflow · huggingface · langchain · langgraph · mlflow · dvc · airflow · prompt engineering · rag · llm inference</p>
+      </div>
+      <div class="skills-group">
+        <p class="skills-category">infrastructure</p>
+        <p class="skills-list">docker · gcp · aws · linux · github actions · mcp · kubernetes · terraform · airflow </p>
       </div>
       <div class="skills-group">
         <p class="skills-category">backend</p>
@@ -62,14 +71,7 @@
         <p class="skills-category">databases</p>
         <p class="skills-list">postgresql · mongodb · pinecone · faiss · chroma · redis · dynamodb</p>
       </div>
-      <div class="skills-group">
-        <p class="skills-category">ai / ml</p>
-        <p class="skills-list"> pytorch · tensorflow · huggingface · langchain · langgraph · mlflow · dvc · airflow · prompt engineering · rag · llm inference</p>
-      </div>
-      <div class="skills-group">
-        <p class="skills-category">infrastructure</p>
-        <p class="skills-list">docker · gcp · aws · linux · github actions · mcp · kubernetes · terraform · airflow </p>
-      </div>
+
     </div>
   </section>
 
@@ -78,73 +80,111 @@
 
     <div class="work-filters">
       <button class="filter-btn active" data-filter="all">all</button>
-      <button class="filter-btn" data-filter="ai">ai</button>
-      <button class="filter-btn" data-filter="full-stack">full-stack</button>
+      <button class="filter-btn" data-filter="gpu-research">gpu systems & ml research</button>
+      <button class="filter-btn" data-filter="ai-nlp">ai & nlp</button>
+      <button class="filter-btn" data-filter="infrastructure">infrastructure & reliability</button>
+      <button class="filter-btn" data-filter="mlops">mlops & data engineering</button>
+      <button class="filter-btn" data-filter="full-stack">full-stack applications</button>
     </div>
 
     <ul class="project-list">
 
-      <li class="project-item" data-category="ai full-stack" data-project="project-inference-reliability">
+      <li class="project-item" data-category="gpu-research" data-project="project-moe-inference">
         <div class="project-header">
-          <span class="project-name">AI Inference Reliability Platform</span>
+          <span class="project-name">MoE LLM Inference on Multi-GPU Systems</span>
           <span class="project-year">2026</span>
+          <a href="https://github.com/ananya-mh/optimizing-moe-inference" target="_blank" class="project-link github-link">github</a>
         </div>
-        <div class="project-stack"><span>python</span><span>java</span><span>typescript</span><span>kubernetes</span><span>kafka</span><span>redis</span><span>postgresql</span><span>docker</span></div>
-        <p class="project-desc">A distributed observability platform that monitors inference service health, streams metrics through Kafka, and detects cascading failures across containerized microservices — with LLM-powered root-cause analysis across a service dependency graph</p>
+        <div class="project-stack"><span>python</span><span>pytorch</span><span>vllm</span><span>nvidia a100</span><span>tensor parallelism</span><span>expert parallelism</span></div>
+        <p class="project-desc">A controlled comparison of tensor parallelism, expert parallelism, and hybrid placement strategies for MoE inference on NVIDIA A100 GPUs — finding that request concurrency explains more throughput variance than strategy choice</p>
       </li>
 
-      <li class="project-item" data-category="ai full-stack" data-project="project-regai">
+      <li class="project-item" data-category="gpu-research" data-project="project-moe-quantization">
+        <div class="project-header">
+          <span class="project-name">Activation-Aware MoE Quantization</span>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-stack"><span>python</span><span>pytorch</span><span>transformers</span><span>huggingface</span><span>quantization</span></div>
+        <p class="project-desc">Profiles expert activation frequencies in OLMoE-1B-7B and tests whether allocating quantization precision based on usage patterns — hot experts at INT8, cold experts at INT4 — preserves more quality than uniform quantization. All quantization implemented from scratch in PyTorch.</p>
+      </li>
+
+      <li class="project-item" data-category="ai-nlp" data-project="project-regai">
         <div class="project-header">
           <span class="project-name">RegAI</span>
           <span class="project-year">2026</span>
+          <a href="https://github.com/ananya-mh/RegAI" target="_blank" class="project-link github-link">github</a>
         </div>
         <div class="project-stack"><span>fastapi</span><span>next.js</span><span>langgraph</span><span>faiss</span><span>chroma</span><span>postgresql</span><span>docker</span><span>gcp cloud run</span><span>github actions</span></div>
         <p class="project-desc">An AI compliance platform where you upload your company's policy documents, pick a regulatory framework — GDPR, SOC 2, HIPAA — and get back a detailed gap analysis report with citations showing exactly where your policies fall short</p>
       </li>
 
-      <li class="project-item" data-category="ai full-stack" data-project="project-support-agent">
+      <li class="project-item" data-category="ai-nlp" data-project="project-clinical-nlp">
+        <div class="project-header">
+          <span class="project-name">Clinical Text Summarization & Entity Analysis</span>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-stack"><span>python</span><span>nlp</span><span>transformers</span><span>ner</span></div>
+        <p class="project-desc">Summarization and named entity recognition on clinical text — extracting structured medical information from unstructured clinical notes</p>
+      </li>
+
+      <li class="project-item" data-category="ai-nlp" data-project="project-support-agent">
         <div class="project-header">
           <span class="project-name">AI Support Agent</span>
           <span class="project-year">2026</span>
+          <a href="https://github.com/ananya-mh/developer-support-tool" target="_blank" class="project-link github-link">github</a>
         </div>
         <div class="project-stack"><span>node.js</span><span>react</span><span>mongodb</span><span>gemini api</span><span>pinecone</span><span>mcp</span><span>docker</span><span>gcp</span></div>
         <p class="project-desc">A developer support tool that answers technical questions by searching through 1,070+ chunks of Firebase documentation — so instead of manually digging through docs, you get a cited answer instantly</p>
+      </li>
+
+      <li class="project-item" data-category="ai-nlp" data-project="project-nyt">
+        <div class="project-header">
+          <span class="project-name">NYT Strands Solver</span>
+          <span class="project-year">2025</span>
+          <a href="https://github.com/ananya-mh/AI-Strands-Solver" target="_blank" class="project-link github-link">github</a>
+        </div>
+        <div class="project-stack"><span>python</span><span>sbert</span><span>trie</span><span>dfs</span><span>csp</span><span>pygame</span></div>
+        <p class="project-desc">An AI solver for the NYT Strands puzzle — given a letter grid and a theme, it finds the exact set of words that covers every cell with no overlaps, using a combination of search, semantic ranking, and constraint solving.</p>
+      </li>
+
+      <li class="project-item" data-category="infrastructure" data-project="project-inference-reliability">
+        <div class="project-header">
+          <span class="project-name">AI Inference Reliability Platform</span>
+          <span class="project-year">2026</span>
+          <a href="https://github.com/ananya-mh/Inference-Reliability-Platform" target="_blank" class="project-link github-link">github</a>
+        </div>
+        <div class="project-stack"><span>python</span><span>java</span><span>typescript</span><span>kubernetes</span><span>kafka</span><span>redis</span><span>postgresql</span><span>docker</span></div>
+        <p class="project-desc">A distributed observability platform that monitors inference service health, streams metrics through Kafka, and detects cascading failures across containerized microservices — with LLM-powered root-cause analysis across a service dependency graph</p>
+      </li>
+
+      <li class="project-item" data-category="infrastructure" data-project="project-ehr">
+        <div class="project-header">
+          <span class="project-name">EHR Sync Platform</span>
+          <span class="project-year">2025</span>
+          <a href="https://github.com/ananya-mh/EHR-Sync-Pipeline" target="_blank" class="project-link github-link">github</a>
+        </div>
+        <div class="project-stack"><span>kafka</span><span>postgresql</span><span>airflow</span><span>docker</span></div>
+        <p class="project-desc">Keeps patient health records consistent across multiple hospital systems in real time — so a doctor pulling up a chart always sees the latest information, regardless of which system updated it.</p>
+      </li>
+
+      <li class="project-item" data-category="mlops" data-project="project-rebalance">
+        <div class="project-header">
+          <span class="project-name">Rebalance AI</span>
+          <span class="project-year">2025</span>
+          <a href="https://github.com/ananya-mh/Rebalance-AI" target="_blank" class="project-link github-link">github</a>
+        </div>
+        <div class="project-stack"><span>python</span><span>airflow</span><span>mlflow</span><span>dvc</span><span>docker</span><span>gcp</span><span>github actions</span></div>
+        <p class="project-desc">Predicts where Bluebikes demand will spike across Boston so stations can be restocked before they run out. Runs automatically every month on fresh data without manual intervention.</p>
       </li>
 
       <li class="project-item" data-category="full-stack" data-project="project-flowride">
         <div class="project-header">
           <span class="project-name">FlowRide</span>
           <span class="project-year">2025</span>
+          <a href="https://github.com/ananya-mh/FlowRide" target="_blank" class="project-link github-link">github</a>
         </div>
         <div class="project-stack"><span>next.js</span><span>react</span><span>redux</span><span>express.js</span><span>rabbitmq</span><span>mongodb</span><span>docker</span><span>aws ecs</span></div>
         <p class="project-desc">A ride-sharing app where users can post, find, and book rides with real-time map visualization and in-app payments. Think Craigslist rideshare, but with live routing and instant booking confirmation.</p>
-      </li>
-
-      <li class="project-item" data-category="ai" data-project="project-rebalance">
-        <div class="project-header">
-          <span class="project-name">Rebalance AI</span>
-          <span class="project-year">2025</span>
-        </div>
-        <div class="project-stack"><span>python</span><span>airflow</span><span>mlflow</span><span>dvc</span><span>docker</span><span>gcp</span><span>github actions</span></div>
-        <p class="project-desc">Predicts where Bluebikes demand will spike across Boston so stations can be restocked before they run out. Runs automatically every month on fresh data without manual intervention.</p>
-      </li>
-
-      <li class="project-item" data-category="full-stack" data-project="project-ehr">
-        <div class="project-header">
-          <span class="project-name">EHR Sync Platform</span>
-          <span class="project-year">2025</span>
-        </div>
-        <div class="project-stack"><span>kafka</span><span>postgresql</span><span>airflow</span><span>docker</span></div>
-        <p class="project-desc">Keeps patient health records consistent across multiple hospital systems in real time — so a doctor pulling up a chart always sees the latest information, regardless of which system updated it.</p>
-      </li>
-
-      <li class="project-item" data-category="ai" data-project="project-nyt">
-        <div class="project-header">
-          <span class="project-name">NYT Strands Solver</span>
-          <span class="project-year">2025</span>
-        </div>
-        <div class="project-stack"><span>python</span><span>sbert</span><span>trie</span><span>dfs</span><span>csp</span><span>pygame</span></div>
-        <p class="project-desc">An AI solver for the NYT Strands puzzle — given a letter grid and a theme, it finds the exact set of words that covers every cell with no overlaps, using a combination of search, semantic ranking, and constraint solving.</p>
       </li>
 
       <li class="project-item" data-category="full-stack" data-project="project-image-processor">
@@ -163,6 +203,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">AI Inference Reliability Platform</h2>
     <p class="detail-year">2026</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/Inference-Reliability-Platform" target="_blank">github</a></div>
     <p class="case-study-summary">A distributed observability platform for monitoring inference service health and detecting cascading failures in real time.</p>
 
     <div class="case-study-section">
@@ -200,6 +241,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">RegAI</h2>
     <p class="detail-year">2026</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/RegAI" target="_blank">github</a></div>
     <p class="case-study-summary">An AI compliance platform that turns policy documents into actionable gap analysis reports.</p>
 
     <div class="case-study-section">
@@ -237,6 +279,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">AI Support Agent</h2>
     <p class="detail-year">2026</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/developer-support-tool" target="_blank">github</a></div>
     <p class="case-study-summary">A developer tool that answers technical questions using 1,070+ chunks of Firebase documentation.</p>
 
     <div class="case-study-section">
@@ -274,6 +317,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">FlowRide</h2>
     <p class="detail-year">2025</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/FlowRide" target="_blank">github</a></div>
     <p class="case-study-summary">A ride-sharing platform with real-time map routing and async booking.</p>
 
     <div class="case-study-section">
@@ -310,6 +354,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">Rebalance AI</h2>
     <p class="detail-year">2025</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/Rebalance-AI" target="_blank">github</a></div>
     <p class="case-study-summary">An ML pipeline that predicts Bluebikes demand across Boston so stations get restocked proactively.</p>
 
     <div class="case-study-section">
@@ -347,6 +392,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">EHR Sync Platform</h2>
     <p class="detail-year">2025</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/EHR-Sync-Pipeline" target="_blank">github</a></div>
     <p class="case-study-summary">A real-time sync layer that keeps patient records consistent across multiple hospital systems.</p>
 
     <div class="case-study-section">
@@ -383,6 +429,7 @@
     <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
     <h2 class="detail-title">NYT Strands Solver</h2>
     <p class="detail-year">2025</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/AI-Strands-Solver" target="_blank">github</a></div>
     <p class="case-study-summary">An AI solver for the NYT Strands puzzle that finds the exact set of themed words covering every cell in the grid with no overlaps.</p>
 
     <div class="case-study-section">
@@ -454,6 +501,81 @@
     <p class="detail-stack">java · swing · mvc · command pattern · junit</p>
   </section>
 
+  <section id="project-moe-quantization">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">Activation-Aware MoE Quantization</h2>
+    <p class="detail-year">2026</p>
+    <p class="case-study-summary">Profiling expert activation frequencies in OLMoE-1B-7B to test whether allocating quantization precision based on usage patterns preserves more quality than uniform quantization — all implemented from scratch in PyTorch.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>MoE models have massive parameter counts but only activate a fraction of experts per token — uniform quantization treats all experts the same regardless of how often they're used</li>
+        <li>Aggressive INT4 compression saves memory but costs noticeable quality; INT8 is near-lossless but gives up half the compression</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Profiled expert activation frequencies across the model — a small subset of "hot" experts handles most tokens while many remain cold</li>
+        <li>Activation-aware strategy: hot experts quantized to INT8 (near-lossless), cold experts to INT4 (maximum compression)</li>
+        <li>All quantization implemented from scratch using PyTorch — no external quantization libraries</li>
+        <li>Benchmarked FP16 baseline, uniform INT8, uniform INT4, and activation-aware variants on perplexity and memory</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>INT8 is effectively lossless — perplexity unchanged while halving expert memory (49.9% savings)</li>
+        <li>Uniform INT4 compresses 4x but costs 0.53 perplexity points</li>
+        <li>Activation-aware approach cuts INT4 degradation by two-thirds (0.18 points) with 57.6% memory savings</li>
+        <li>Expert activation frequencies are highly non-uniform, which is exactly why differential precision allocation works</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">python · pytorch · transformers · huggingface · quantization</p>
+  </section>
+
+  <section id="project-moe-inference">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">MoE LLM Inference on Multi-GPU Systems</h2>
+    <p class="detail-year">2026</p>
+    <div class="detail-links"><a href="https://github.com/ananya-mh/optimizing-moe-inference" target="_blank">github</a></div>
+    <p class="case-study-summary">A controlled comparison of parallelism strategies for serving Mixture-of-Experts models across GPUs — published at SIEDS 2026.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>MoE models need multi-GPU serving, but it's unclear whether tensor parallelism, expert parallelism, or a hybrid approach is the right default</li>
+        <li>Emerging diffusion-based MoE architectures introduce routing overhead at every denoising step, with unknown throughput implications</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Benchmarked Tensor Parallelism (TP), Expert Parallelism (EP), and Hybrid (TP+EP) strategies on NVIDIA A100 GPUs across multiple MoE architectures</li>
+        <li>Varied request concurrency levels and measured throughput, latency, and resource utilization for each strategy</li>
+        <li>Statistical analysis (ANOVA) to decompose what actually drives throughput variance — strategy choice vs. system-level factors</li>
+        <li>Tested diffusion-based MoE architectures to quantify routing overhead at scale</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>TP is a strong default, but EP matches or exceeds TP for models with 60+ small experts</li>
+        <li>Naive Hybrid strategy severely underperforms both TP and EP in all tested configurations</li>
+        <li>Request concurrency explains 51.7% of throughput variance vs. just 6.6% for strategy choice — tune concurrency before picking a strategy</li>
+        <li>Diffusion-based MoE architectures suffer a 9.8x throughput penalty vs. dense models due to per-step routing overhead</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">python · pytorch · vllm · nvidia a100 · tensor parallelism · expert parallelism</p>
+  </section>
+
   <section id="research">
       <p class="section-label">research</p>
 
@@ -470,7 +592,7 @@
           <div class="paper-links">
             <a href="https://drive.google.com/file/d/1XpFSX8_OFuhgncVd9iJZpYI8DJCIiSdc/view?usp=sharing" target="_blank">pdf</a>
             <a href="#" target="_blank">arxiv</a>
-            <a href="#" target="_blank">code</a>
+            <a href="https://github.com/ananya-mh/optimizing-moe-inference" target="_blank">code</a>
           </div>
         </li>
 

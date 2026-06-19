@@ -45,10 +45,21 @@ document.querySelectorAll('.project-item[data-project]').forEach(item => {
   });
 });
 
+document.querySelectorAll('.github-link').forEach(link => {
+  link.addEventListener('click', e => e.stopPropagation());
+});
+
 document.querySelectorAll('.back-to-work').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     show('work');
+  });
+});
+
+document.querySelectorAll('.back-to-skills').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    show('skills');
   });
 });
 
