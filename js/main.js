@@ -68,8 +68,30 @@ const catPopup = document.getElementById('catPopup');
 const popupClose = document.getElementById('popupClose');
 const popupOk = document.getElementById('popupOk');
 
+const movingCatContainer = document.getElementById('movingCatContainer');
+const movingCatImg = document.getElementById('movingCatImg');
+const catGifs = ['cat.gif', 'cat2.gif', 'cat3.gif'];
+
+function spawnCat() {
+  const isRight = Math.random() > 0.5;
+  const randomCat = catGifs[Math.floor(Math.random() * catGifs.length)];
+  
+  movingCatImg.src = randomCat;
+  movingCatContainer.classList.remove('walking-right', 'walking-left', 'visible');
+  
+  void movingCatContainer.offsetWidth;
+  
+  movingCatContainer.classList.add('visible');
+  movingCatContainer.classList.add(isRight ? 'walking-right' : 'walking-left');
+  
+  setTimeout(() => {
+    movingCatContainer.classList.remove('visible');
+  }, 15000);
+}
+
 document.getElementById('catTrigger').addEventListener('click', e => {
   e.preventDefault();
+  spawnCat();
   catPopup.classList.add('open');
 });
 

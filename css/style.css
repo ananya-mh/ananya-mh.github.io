@@ -596,6 +596,46 @@ footer {
   color: var(--accent);
 }
 
+/* ── Moving Cat ── */
+.moving-cat-container {
+  position: fixed;
+  bottom: 10px;
+  left: -100px;
+  width: 80px;
+  z-index: 1000;
+  pointer-events: none;
+  display: none;
+  transition: opacity 0.5s;
+}
+
+.moving-cat-container.visible {
+  display: block;
+}
+
+.moving-cat {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.walking-right {
+  animation: walk-right 15s linear forwards;
+}
+
+.walking-left {
+  animation: walk-left 15s linear forwards;
+}
+
+@keyframes walk-right {
+  0% { left: -100px; transform: scaleX(1); }
+  100% { left: 100vw; transform: scaleX(1); }
+}
+
+@keyframes walk-left {
+  0% { left: 100vw; transform: scaleX(-1); }
+  100% { left: -100px; transform: scaleX(-1); }
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 480px) {
