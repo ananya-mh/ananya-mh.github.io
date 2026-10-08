@@ -108,6 +108,24 @@
         <p class="project-desc">Profiles expert activation frequencies in OLMoE-1B-7B and tests whether allocating quantization precision based on usage patterns — hot experts at INT8, cold experts at INT4 — preserves more quality than uniform quantization. All quantization implemented from scratch in PyTorch.</p>
       </li>
 
+      <li class="project-item" data-category="ai-nlp" data-project="project-group-captioning">
+        <div class="project-header">
+          <span class="project-name">Group Captioning for Hearing Impaired Users</span>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-stack"><span>typescript</span><span>webgpu</span><span>onnx runtime web</span><span>whisper</span><span>pytorch</span><span>huggingface</span></div>
+        <p class="project-desc">A live captioner that runs entirely in the browser. It transcribes group conversations with Whisper, labels who is speaking, and filters out filler words, with captions arriving in about 0.9 s. No audio leaves the device.</p>
+      </li>
+
+      <li class="project-item" data-category="ai-nlp" data-project="project-sous">
+        <div class="project-header">
+          <span class="project-name">Sous: Meal Planning AI</span>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-stack"><span>fastapi</span><span>react</span><span>mysql</span><span>bert</span><span>llm</span><span>ner</span></div>
+        <p class="project-desc">A meal planner you talk to in plain English, like "high-protein vegetarian dinners under 30 minutes". It finds matching recipes, suggests dietary substitutions, and turns the week's picks into one grocery list with combined quantities.</p>
+      </li>
+
       <li class="project-item" data-category="ai-nlp" data-project="project-regai">
         <div class="project-header">
           <span class="project-name">RegAI</span>
@@ -235,6 +253,81 @@
     </div>
 
     <p class="detail-stack">python · java · typescript · kubernetes · kafka · redis · postgresql · docker</p>
+  </section>
+
+  <section id="project-group-captioning">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">Group Captioning for Hearing Impaired Users</h2>
+    <p class="detail-year">2026</p>
+    <p class="case-study-summary">An on-device live captioner for group conversations. It shows what was said, who said it, and cleans out the filler, all inside the browser.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Most live captioning tools are built for one speaker. In a group they print one unbroken stream of text, so a hearing impaired user can't tell who said what</li>
+        <li>Cloud captioning sends private conversations to a server and adds network lag</li>
+        <li>Raw speech-to-text is full of "um", "uh" and restarts, which makes captions harder to read in real time</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>Whisper runs in the browser on WebGPU through ONNX Runtime Web, so audio never leaves the device</li>
+        <li>Each caption is labeled with the speaker who said it, so the user can follow the group conversation</li>
+        <li>Fine-tuned an ELECTRA-small disfluency model in PyTorch with Hugging Face, exported it to ONNX, and ran it in the browser to remove filler words and false starts from the transcript</li>
+        <li>Gain normalization on the incoming audio, so quiet or distant speakers still get picked up by speech detection</li>
+        <li>Written in TypeScript end to end</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>0.9 s caption latency, with all inference on the device</li>
+        <li>81% precision on disfluency detection</li>
+        <li>Gain normalization raised speech-detection coverage from 23% to 83%</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">typescript · webgpu · onnx runtime web · whisper · electra · pytorch · huggingface</p>
+  </section>
+
+  <section id="project-sous">
+    <p class="section-label"><a href="#" class="back-to-work">← back to work</a></p>
+    <h2 class="detail-title">Sous: Meal Planning AI</h2>
+    <p class="detail-year">2026</p>
+    <p class="case-study-summary">A meal planner that takes a request in plain English and returns recipes, dietary substitutions, and a combined grocery list.</p>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">the problem</p>
+      <ul class="case-study-bullets">
+        <li>Recipe sites make you filter by hand, and the filters rarely cover real constraints like "no dairy, high protein, under 30 minutes"</li>
+        <li>Planning a week of meals means copying ingredients from several recipes and adding up the quantities yourself</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">how it works</p>
+      <ul class="case-study-bullets">
+        <li>An LLM extracts structured constraints (diet, ingredients, time and so on) from a natural-language request</li>
+        <li>The constraints are used to retrieve matching recipes and to suggest substitutions that fit the user's diet</li>
+        <li>A BERT model fine-tuned for ingredient named entity recognition pulls the ingredients and quantities out of each recipe</li>
+        <li>Ingredients from all selected recipes are merged into one grocery list with combined quantities</li>
+        <li>FastAPI backend, React frontend, MySQL for recipes and user data</li>
+      </ul>
+    </div>
+
+    <div class="case-study-section">
+      <p class="case-study-heading">results</p>
+      <ul class="case-study-bullets">
+        <li>80% accuracy on LLM constraint extraction on a held-out set</li>
+        <li>0.88 F1 on ingredient NER</li>
+        <li>Goes from one sentence to a week of recipes and a ready-to-use grocery list</li>
+      </ul>
+    </div>
+
+    <p class="detail-stack">fastapi · react · mysql · bert · llm · ner · huggingface</p>
   </section>
 
   <section id="project-regai">
@@ -591,7 +684,7 @@
           <p class="paper-abstract">A controlled comparison of tensor parallelism, expert parallelism, and hybrid placement strategies for MoE inference on NVIDIA A100 GPUs — finding that request concurrency explains more throughput variance than strategy choice, and that EP matches or exceeds TP for models with 60+ experts.</p>
           <div class="paper-links">
             <a href="https://drive.google.com/file/d/1XpFSX8_OFuhgncVd9iJZpYI8DJCIiSdc/view?usp=sharing" target="_blank">pdf</a>
-            <a href="#" target="_blank">arxiv</a>
+            <a href="https://ieeexplore.ieee.org/document/11540265" target="_blank">ieee</a>
             <a href="https://github.com/ananya-mh/optimizing-moe-inference" target="_blank">code</a>
           </div>
         </li>
